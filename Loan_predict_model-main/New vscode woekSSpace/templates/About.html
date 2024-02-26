@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>About</title>
+    <style>
+        * {
+            font-family: 'Signika', sans-serif;
+        }
+
+        body {
+            height: 1400px;
+            margin: 0%;
+            padding: 0%;
+            background: url(https://crossbones.org.uk/wp-content/uploads/2016/08/grey-background.jpg);
+            /* background: url(https://data.freehdw.com/blue-and-green-triangles.jpg); */
+
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .top {
+            /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+            margin: auto;
+            width: 550px;
+            padding: 2px;
+            border-radius: 40px;
+            font-size: large;
+        }
+
+        .left img {
+
+
+            height: 50px;
+            padding-top: 10px;
+            padding-left: 45px;
+            padding-bottom: 0px;
+
+        }
+
+
+        .midlist .nvb {
+            display: inline-block;
+            padding: 10px;
+
+        }
+
+        .mid .midlist a {
+            font-size: 24px;
+
+            padding: 2px 15px;
+            text-decoration: none;
+        }
+
+        .left {
+            position: fixed;
+            right: 0px;
+            top: 0%;
+            display: inline-block;
+        }
+
+        .left p {
+
+            height: 0px;
+            margin-top: 0%;
+            text-align: center;
+        }
+
+        .mid a {
+            color: rgb(97, 53, 126)
+        }
+
+        .mid {
+            display: inline-block;
+            width: 600px;
+        }
+
+        .mid .midlist a:hover,
+        .mid a.active {
+            color: rgb(34, 40, 57);
+        }
+
+        /* .content {
+            margin: 0px;
+            height: 400px;
+            display: inline-block;
+            inline-size: 950px;
+            overflow-wrap: break-word; */
+        /* display: inline-block;
+            border: 2px solid black; */
+        /* align-items: center; */
+        /* } */
+
+
+        .btn {
+            text-decoration: none;
+            font-size: 20px;
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            background-color: rgb(199, 204, 204);
+            border: none;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        /* .btn a{
+            text-decoration: none;
+            color: aqua;
+        } */
+
+        .btn:hover {
+            color: rgb(113, 114, 148);
+            background-color: rgb(177, 181, 179);
+
+        }
+
+        .about {
+            /* s */
+            border-top-right-radius: 160px;
+            border-bottom-left-radius: 140px;
+            padding: 30px;
+            /* background: url('https://t3.ftcdn.net/jpg/03/00/28/06/360_F_300280663_nsjsIvX1cHw7PtCMBe047Mh15gMMxCNa.jpg'); */
+            /* background-color: rgb(111, 118, 115); */
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            top: 150px;
+        }
+
+        .about .number {
+            padding: 20px;
+            text-decoration: none;
+            display: none;
+            color: red;
+            padding: 20px;
+            position: absolute;
+            top: 326px;
+            left: -31px;
+        }
+
+        .about .call:hover+.number {
+            display: block;
+
+        }
+
+        .my-img {
+            position: relative;
+            left: 1100px;
+            height: 350px;
+            border-top-right-radius: 140px;
+            border-bottom-left-radius: 140px;
+        }
+
+        .info {
+
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            font-size: 45px;
+        }
+
+        .data {
+            margin: auto;
+            width: 800px;
+            position: absolute;
+            top: 100px;
+            left: 115px;
+        }
+
+        .data-span {
+            display: inline-block;
+            text-align: left;
+            padding: 45px;
+            font-size: 23px;
+        }
+
+        iframe {
+            position: relative;
+            top: 200px;
+            border-radius: 50px;
+        }
+
+        .skill-sets {
+            border-top-right-radius: 160px;
+            border-bottom-left-radius: 140px;
+            padding: 30px;
+            /* background: url('https://t3.ftcdn.net/jpg/03/00/28/06/360_F_300280663_nsjsIvX1cHw7PtCMBe047Mh15gMMxCNa.jpg'); */
+            /* background-color: rgb(111, 118, 115); */
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            top: 200px;
+        }
+
+        .skill-sets div {
+            display: inline-block;
+        }
+
+        .head {
+            position: absolute;
+            left: 50px;
+            font-size: 45px;
+        }
+
+        .skills {
+            padding-right: 100px;
+            padding-left: 50px;
+            padding-top: 100px;
+            padding-bottom: 70px;
+        }
+
+        .skills h4 {
+            width: 120px;
+            text-align: center;
+        }
+
+        .skills img {
+            width: 120px;
+            text-align: center;
+        }
+
+        .python-img:hover {
+            animation: scaleAnimation 2s infinite alternate;
+            /* Apply the animation on hover */
+        }
+
+        @keyframes scaleAnimation {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.2);
+                /* Set the scale factor for the animation */
+            }
+        }
+
+        .links {
+            width: 10px;
+            margin: auto;
+            display: inline-block;
+            position: absolute;
+            left: 991px;
+            top: 39px;
+        }
+
+        .links img {
+            padding-bottom: 37px;
+        }
+
+        .links .call {
+            padding-bottom: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="top">
+        <div class="left">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLl4CyVxeROmcJ_gGQeGu-w2q_OgS0Jy7n6N0uggywgB3ng4t6cvwsssr68qsBFpgi5gE&usqp=CAU"
+                alt=""><br>
+            <p>Predictiion Center</p>
+        </div>
+
+        <div class="mid">
+            <ul class="midlist">
+                <li class="nvb"><a href="{{ url_for('pro') }}">Home</a></li>
+                <li class="nvb"><a class="active" href="#">About</a></li>
+                <li class="nvb"><a href="{{ url_for( 'MachineLearn' )}}">Machine Learning</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div>
+        <a class="btn" style="color: rgb(35, 32, 32);" href=" {{ url_for('myform') }} ">Prediction</a>
+    </div>
+    <div class="about" data-aos="zoom-in" data-aos-duration="1000">
+        <!-- <img class="my-img" data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000" src="Myimage.jpg" alt=""> -->
+        <img class="my-img" data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000" src="{{url_for('static' , filename='images/Myimage.jpg')}}" alt="Image">
+        <span class="info" data-aos="fade-right" data-aos-duration="2000" >About me</span>
+
+        <!-- This Code Section is for Html direct run not for Flask -->
+
+        <!-- <div class="links">
+            <a href=""><img style="height: 50px;" data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1500" src="linkedin.png" alt=""></a>
+            <a href=""><img style="height: 57px;" data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1500" src="github.png" alt="">
+            </a>
+            <a href=""><img style="height: 50px;" data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1500" src="instagramok.png" alt=""></a>
+            <a href="tel:+919696889224"><img style="height: 57px;" class="call" data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1500" src="Call.png" alt="">
+                <span class="number">9696889224</span>
+            </a>
+        </div> -->
+
+        <!-- This Code Section is for Flask direct run not for HTML -->
+
+        <div class="links">
+            <a href="https://www.linkedin.com/in/aruj-dwivedi-9619b3247"><img style="height: 50px;" data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1500" src="{{url_for('static' , filename='images/linkedin.png')}}" alt=""></a>
+            <a href="https://github.com/Aruj1923"><img style="height: 57px;" data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1500" src="{{url_for('static' , filename='images/github.png')}}" alt="">
+            </a>
+            <a href="https://instagram.com/aruj1923?utm_source=qr&igshid=YzU1NGVlODEzOA=="><img style="height: 50px;" data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1500" src="{{url_for('static' , filename='images/instagramok.png')}}" alt=""></a>
+            <a href="tel:+919696889224"><img style="height: 57px;" class="call" data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"
+                data-aos-duration="1500" src="{{url_for('static' , filename='images/Call.png')}}" alt="">
+                <span class="number">9696889224</span>
+            </a>
+        </div>
+        
+        <div class="data">
+            <span class="data-span" data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1500">
+                I am an analytical and results-oriented professional with a computer science background and a proven
+                track record in creating and implementing process improvements. With a strong focus on efficiency and
+                cost-effectiveness, I excel in translating company practices into streamlined solutions and optimizing
+                operations.
+            </span>
+
+        </div>
+    </div>
+    <div>
+
+    </div>
+
+    <!-- This Code Section is for Html direct run not for Flask -->
+
+    <!-- <div class="skill-sets">
+        <span class="head" data-aos="fade-right" data-aos-duration="2000">
+            Skills Set
+        </span>
+        <div class="skills">
+            <h4 class="python" data-aos="fade-up-right">Python</h3>
+                <a href=""> <img class="python-img" style="height: 120px; width: 120px;" 
+                    data-aos="fade-up-right" src="python_logo.png" alt="">
+                </a>
+        </div>
+        <div class="skills">
+            <h4 class="python" data-aos="fade-up-right">ML</h3>
+                <a href="">
+                    <img class="python-img" style="height: 120px; width: 120px;"
+                    data-aos="fade-up-right" src="ML.png" alt="">
+                </a>
+        </div>
+        <div class="skills">
+            <h4 class="python" data-aos="flip-up">MySql</h3>
+                <a href="">
+                    <img class="python-img" style="height: 120px; width: 120px;" 
+                    data-aos="flip-up" src="SQL.png" alt="">
+                </a>
+        </div>
+        <div class="skills">
+            <h4 class="python" data-aos="fade-up-left" >Power BI</h3>
+                <a href=""> <img class="python-img" style="height: 120px; width: 120px;" 
+                    data-aos="fade-up-left" src="PowerBI.png" alt=""> </a>
+        </div>
+        <div style="padding-right:0px ;" class="skills">
+            <h4 class="python" data-aos="fade-up-left" >Tableau</h3>
+                <a href=""> <img class="python-img" style="height: 120px; width: 120px;"
+                    data-aos="fade-up-left" src="Tableau.png" alt=""> </a>
+        </div>
+    </div> -->
+
+    <!-- This Code Section is for Flask direct run not for HTML -->
+
+    <div class="skill-sets">
+        <span class="head" data-aos="fade-right" data-aos-duration="2000">
+            Skills Set
+        </span>
+        <div class="skills">
+            <h4 class="python" data-aos="fade-up-right">Python</h3>
+                <a href=""> <img class="python-img" style="height: 120px; width: 120px;" 
+                    data-aos="fade-up-right" src="{{url_for('static' , filename='images/python_logo.png')}}" alt="">
+                </a>
+        </div>
+        <div class="skills">
+            <h4 class="python" data-aos="fade-up-right">ML</h3>
+                <a href="">
+                    <img class="python-img" style="height: 120px; width: 120px;"
+                    data-aos="fade-up-right" src="{{url_for('static' , filename='images/ML.png')}}" alt="">
+                </a>
+        </div>
+        <div class="skills">
+            <h4 class="python" data-aos="flip-up">MySql</h3>
+                <a href="">
+                    <img class="python-img" style="height: 120px; width: 120px;" 
+                    data-aos="flip-up" src="{{url_for('static' , filename='images/SQL.png')}}" alt="">
+                </a>
+        </div>
+        <div class="skills">
+            <h4 class="python" data-aos="fade-up-left" >Power BI</h3>
+                <a href=""> <img class="python-img" style="height: 120px; width: 120px;" 
+                    data-aos="fade-up-left" src="{{url_for('static' , filename='images/PowerBI.png')}}" alt=""> </a>
+        </div>
+        <div style="padding-right:0px ;" class="skills">
+            <h4 class="python" data-aos="fade-up-left" >Tableau</h3>
+                <a href=""> <img class="python-img" style="height: 120px; width: 120px;"
+                    data-aos="fade-up-left" src="{{url_for('static' , filename='images/Tableau.png')}}" alt=""> </a>
+        </div>
+    </div>
+
+    <!-- <div>
+        Embed the Plotly graph here
+        <iframe src="plotly_graph.html" width="250" height="300"></iframe>
+        <iframe src="{{url_for('static' , filename='images/plotly_graph.html')}}" width="250" height="300"></iframe>
+    </div> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+
+</html>

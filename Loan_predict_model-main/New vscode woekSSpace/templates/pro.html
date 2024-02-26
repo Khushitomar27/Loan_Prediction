@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Prediction Center</title>
+    <style>
+        * {
+            font-family: 'Signika', sans-serif;
+        }
+
+        body {
+            /* height: 1100px; */
+            margin: 0%;
+            padding: 0%;
+            background: url(https://crossbones.org.uk/wp-content/uploads/2016/08/grey-background.jpg);
+            /* background: url(https://data.freehdw.com/blue-and-green-triangles.jpg); */
+
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .top {
+            /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+            margin: auto;
+            width: 550px;
+            padding: 2px;
+            border-radius: 40px;
+            font-size: large;
+        }
+
+        .left img {
+
+
+            height: 50px;
+            padding-top: 10px;
+            padding-left: 45px;
+            padding-bottom: 0px;
+
+        }
+
+
+        .midlist .nvb {
+            display: inline-block;
+            padding: 10px;
+
+        }
+
+        .mid .midlist a {
+            font-size: 24px;
+
+            padding: 2px 15px;
+            text-decoration: none;
+        }
+
+        .left {
+            position: fixed;
+            right: 0px;
+            top: 0%;
+            display: inline-block;
+        }
+
+        .left p {
+
+            height: 0px;
+            margin-top: 0%;
+            text-align: center;
+        }
+
+        .mid a {
+            color: rgb(97, 53, 126)
+        }
+
+        .mid {
+            display: inline-block;
+            width: 600px;
+        }
+
+        .mid .midlist a:hover,
+        .mid a.active {
+            color: rgb(34, 40, 57);
+        }
+
+        /* .content {
+            margin: 0px;
+            height: 400px;
+            display: inline-block;
+            inline-size: 950px;
+            overflow-wrap: break-word; */
+        /* display: inline-block;
+            border: 2px solid black; */
+        /* align-items: center; */
+        /* } */
+        .content {
+            padding: 50px;
+            overflow: hidden;
+        }
+
+        .content .contentp {
+            text-align: center;
+            font-size: 0.8cm;
+            font-family: 'Signika', sans-serif;
+            /* padding-top: 50px;
+            padding-bottom: 30px;
+            padding-left: 330px; */
+            /* margin: 0px; */
+            color: rgb(18, 11, 11);
+            /* align-items: center; */
+            /* padding: 200px 30px; */
+            position: relative;
+            /* top: 0px; */
+            left: 0px;
+            animation: moveText 30s linear infinite;
+        }
+
+        @keyframes moveText {
+            100% {
+                transform: translateX(-1300px);
+            }
+
+            0% {
+                transform: translateX(1300px);
+            }
+        }
+
+        .contentp2 {
+            text-align: center;
+            /* display:  inline-block;
+            margin: auto;
+            margin-left: 0%;
+            padding: 10px;
+            padding-left: 30px; */
+            font-size: 0.8cm;
+            font-family: 'Signika', sans-serif;
+            /* inline-size: 500px; */
+            /* overflow-wrap: break-word; */
+            position: relative;
+            /* top: 0px; */
+            left: 0px;
+            animation: moveText 60s linear infinite;
+        }
+
+        .btn {
+            text-decoration: none;
+            font-size: 20px;
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            background-color: rgb(199, 204, 204);
+            border: none;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        /* .btn a{
+            text-decoration: none;
+            color: aqua;
+        } */
+
+        .btn:hover {
+            color: rgb(113, 114, 148);
+            background-color: rgb(177, 181, 179);
+
+        }
+
+        .paira {
+            padding: 20PX;
+            display: inline-block;
+            /* position: absolute;
+            top: 400px; */
+            padding: 20px 0px;
+            /* background-image: url(https://img.freepik.com/free-vector/polygonal-3d-background-with-blue-monochome-tones_23-2148402780.jpg?w=2000); */
+            /* background-image: url(https://img.freepik.com/premium-vector/abstract-blue-green-background-nature-gradient-backdrop-icy-window-vector_88211-2926.jpg?w=2000); */
+            border-radius: 50px;
+            /* border: 2px solid salmon; */
+            /* background-color: rgb(140, 193, 174); */
+            height: 1200px;
+            width: 1375px;
+            position: relative;
+
+            /* animation-name: example;
+            animation-duration: 4s;
+            animation-fill-mode: forwards; */
+            /* animation-delay: 2s; */
+        }
+
+        /* @keyframes example {
+            from {
+                top: 200px;
+            }
+
+            to {
+                top: 0px;
+            }
+        } */
+
+        .paira p {
+            /* border: 2px solid salmon; */
+            /* background-color: rgb(140, 193, 174); */
+
+            font-size: 20px;
+            margin: auto;
+            padding: 21px 20px;
+            width: 650px;
+            display: inline-block;
+        }
+
+        .paira p a {
+            text-decoration: none;
+        }
+
+        .paira1 {
+            /* display: inline-block; */
+            position: absolute;
+            left: 0px;
+            /* border: 2px solid red; */
+            border-radius: 50px;
+            margin: auto;
+            width: 250px;
+        }
+
+        .paira1 p {
+            margin: auto;
+            width: 200px;
+        }
+
+        .paira2 {
+            position: relative;
+            left: 250px;
+            display: inline-block;
+            /* border: 2px solid red; */
+            border-radius: 50px;
+            margin: auto;
+        }
+
+        .paira2 .intro li {
+            list-style: none;
+            margin: auto;
+            width: 695px;
+        }
+
+        .dependsimg {
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            left: 985px;
+
+        }
+
+/* This is image part of Analysis */
+
+        .dependsimg img {
+            /* position: absolute;
+            top: 200px; */
+            height: 300px
+        }
+
+        .dep img {
+            border-radius: 20px;
+        }
+
+        .gen img{
+            border-radius: 20px;
+        }
+
+        .mar img{
+            border-radius: 20px;
+        }
+
+        .sel img{
+            border-radius: 20px;
+        }
+/* This is Note Importent Note part of ML */
+        .paira .paira1 ol li{
+            padding: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="top">
+        <div class="left">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLl4CyVxeROmcJ_gGQeGu-w2q_OgS0Jy7n6N0uggywgB3ng4t6cvwsssr68qsBFpgi5gE&usqp=CAU"
+                alt=""><br>
+            <p>Predictiion Center</p>
+        </div>
+
+        <div class="mid">
+            <ul class="midlist">
+                <li class="nvb"><a class="active" href="#">Home</a></li>
+                <li class="nvb"><a href="{{ url_for( 'About' )}}">About</a></li>
+                <li class="nvb"><a href="{{ url_for( 'MachineLearn' )}}">Machine Learning</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="content">
+        <p class="contentp">
+            Welcome to Machine Learning Prediction model Platform , here you can Predict your Future
+        </p>
+
+        <p class="contentp2">
+            For <i> Loan Prediction </i>just go for Prediction Button on top left corner
+        </p>
+    </div>
+    <div>
+        <a class="btn" style="color: rgb(35, 32, 32);" href=" {{ url_for('myform') }} ">Prediction</a>
+    </div>
+    <div class="paira" >
+        <div class="paira1" data-aos="zoom-in-right" data-aos-duration="2000" >
+            <h2 style="text-align: center;">Note Points</h2>
+            <ol>
+                <li data-aos="zoom-in-right" data-aos-duration="1000">
+                    Machine Learning means learning from Data.
+                </li>
+                <li data-aos="zoom-in-right" data-aos-duration="1000">
+                    Machine = Your machine/computer Learning = Finding patterns from data
+                </li>
+                <li data-aos="zoom-in-right" data-aos-duration="1000">
+                    Machine Learning is just Data + Algorithms, but Data is more important.
+                </li>
+                <li data-aos="zoom-in-right" data-aos-duration="1000">
+                    Feature extraction is key. If total prediction power is 100% then the effort of feature engineering = 80% and the effort of the learning algorithm = 20%.
+                </li>
+                <li data-aos="zoom-in-right" data-aos-duration="1000">
+                    Overfitting is when your algorithm is memorizing instead of learning.
+                </li>
+                <li data-aos="zoom-in-right" data-aos-duration="1000">
+                    If you have small amounts of data then you’re better off using more simple models (linear&logistic regression). If you have large amounts of data you can try out more complex models (Deep Learning, etc.)
+                </li>
+                <li data-aos="zoom-in-right" data-aos-duration="1000">
+                    To avoid overfitting, always use regularization
+                </li>
+                <li data-aos="zoom-in-right" data-aos-duration="1000">
+                    Training is the most important part of Machine Learning. Choose your features and hyper parameters carefully.
+                </li>
+                <li data-aos="zoom-in-right" data-aos-duration="1000">
+                    Machines don’t take decisions, people do.
+                </li>
+                <li data-aos="zoom-in-right" data-aos-duration="1000">Data cleaning is the most important part of Machine Learning. You know the saying: Garbage in Garbage out.
+                </li>
+            </ol>
+        </div>
+        <div class="paira2" data-aos="fade-up"  data-aos-duration="2000" >
+            <ul >
+                <h2>Introducton</h2>
+                <li style="list-style: none;" class="intro1" data-aos="fade-up" data-aos-duration="1000">
+
+                    <p>
+                        &#x2022; Hello I'm here to give you an introduction, to my prediction model and explain the
+                        approach I've taken in its development. Lets begin away without any delay.
+                    </p>
+                </li>
+                <h2>Fundamentals</h2>
+                <li style="list-style: none;" class="intro2"  data-aos="fade-up" data-aos-duration="1000">
+
+                    <p>
+                        &#x2022; To begin building the ML model the first and fundamental step is data extraction. It is
+                        crucial to consider the source from which you obtain your data. There are websites such, as <a
+                            href="https://www.kaggle.com/">Kaggle</a>, which is widely regarded as one of the top
+                        platforms, for data extraction. On Kaggle you can discover an array of datasets that can be
+                        easily downloaded and used for training your model.
+                    </p>
+                </li>
+                <h2>Installation</h2>
+                <li style="list-style: none;" class="intro3"  data-aos="fade-up" data-aos-duration="1000">
+
+                    <p>
+                        &#x2022; Now that we have our dataset, in our system we are ready to proceed. However before we
+                        begin it is important to check if Python is functioning properly on your system. To do this
+                        simply type "<i>jupyter lab -v</i>". It will display the version of Jupyter Lab installed on
+                        your system. If you don't have it installed you can download it by following this link <a
+                            href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">jupyterlab</a>.
+                        Alright I hope everything is going well for you.
+                    </p>
+                </li>
+                <h2>Analysis</h2>
+                <li style="list-style: none;" class="intro4"  data-aos="fade-up" data-aos-duration="1000">
+
+                    <p>
+                        &#x2022; Alright it seems like you're prepared. Once you have your dataset, in the desired state
+                        it's up to you and your client to determine how to proceed. If you're unfamiliar with data
+                        cleaning I recommend checking out this link on <a
+                            href="https://www.geeksforgeeks.org/data-cleansing-introduction/">cleandata</a>.
+                        Additionally it would be beneficial to learn about data analysis by following this guide, on <a
+                            href="https://www.geeksforgeeks.org/data-analysis-tutorial/">Analysedata</a>. Alright then I
+                        hope everything is going well for you.
+
+                    </p>
+                </li>
+                <h2>Graph Understanding</h2>
+                <li style="list-style: none;" class="intro5" data-aos="fade-up" data-aos-duration="1000" >
+
+                    <p>
+                        &#x2022; Now, at last, we have arrived here. It is time for us to comprehend the graph situated
+                        on the right side of the screen. First and foremost, let's examine the Dependents count graph.
+                        This particular chart illustrates the number of family members who rely on you. From a closer
+                        look, it becomes evident that there is a significantly higher quantity of individuals with <i
+                            style="color: rgb(91, 55, 115);">zero </i> dependents. Shifting our attention to Gender, it
+                        can be observed that <i style="color: rgb(91, 55, 115);">Male</i> applicants prevail in numbers.
+                        Furthermore, a substantial portion of people are disclosed as being <i
+                            style="color: rgb(91, 55, 115);">Married!</i> Lastly, turning our attention towards the
+                        final graph indicates that most individuals replied "<i
+                            style="color: rgb(91, 55, 115);">No</i>," indicating they are not self-employed.
+                    </p>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="dependsimg" data-aos="zoom-in-left" data-aos-duration="2000" >
+            <h2 style="text-align: center;">Analysis Images</h2>
+            <!-- <img class="dep" data-aos="zoom-in-left" data-aos-duration="1000" src="{{url_for('static' , filename='images/Depeendss.png')}}" alt="sorry image not find">
+            <img class="gen" data-aos="zoom-in-left" data-aos-duration="1000" src="{{url_for('static' , filename='images/Genders.png')}}" alt="sorry image not find">
+            <img class="mar" data-aos="zoom-in-left" data-aos-duration="1000" src="{{url_for('static' , filename='images/Marrieds.png')}}" alt="sorry image not find">
+            <img class="sel" data-aos="zoom-in-left" data-aos-duration="1000" src="{{url_for('static' , filename='images/self_employeds.png')}}" alt="sorry image not find"> -->
+            
+            <div class="dep" data-aos="zoom-in-left" data-aos-duration="1000" >
+                <img src="{{url_for('static' , filename='images/Depeendss.png')}}" alt="Image">
+            </div  >
+            <div class="gen" data-aos="zoom-in-left" data-aos-duration="1000">
+                <img src="{{url_for('static' , filename='images/Genders.png')}}" alt="image">
+            </div>
+            <div class="mar" data-aos="zoom-in-left" data-aos-duration="1000" >
+                <img src="{{url_for('static' , filename='images/Marrieds.png')}}" alt="Image">
+            </div>
+            <div class="sel" data-aos="zoom-in-left" data-aos-duration="1000" >
+                <img src="{{url_for('static' , filename='images/self_employeds.png')}}" alt="Image">
+            </div>
+
+
+            <!-- ####################### -->
+            
+            <!-- <div class="dep" data-aos="zoom-in-right" data-aos-duration="1000" >
+                <img src="Depeendss.png" alt="Image">
+            </div  >
+            <div class="gen" data-aos="zoom-in-left" data-aos-duration="1000">
+                <img src="Genders.png" alt="image">
+            </div>
+            <div class="mar" data-aos="zoom-in-left" data-aos-duration="1000" >
+                <img src="Marrieds.png" alt="Image">
+            </div>
+            <div class="sel" data-aos="zoom-in-left" data-aos-duration="1000" >
+                <img src="self_employeds.png" alt="Image"> -->
+            </div>
+           
+            
+            
+
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Signika', sans-serif;
+        }
+
+        body {
+            height: 1100px;
+            margin: 0%;
+            padding: 0%;
+             
+            background: url(https://crossbones.org.uk/wp-content/uploads/2016/08/grey-background.jpg);
+        }
+
+        .top {
+           
+            margin: auto;
+            width: 550px;
+            padding: 2px;
+            border-radius: 40px;
+            font-size: large;
+        }
+
+        .left img {
+
+
+            height: 50px;
+            padding-top: 10px;
+            padding-left: 45px;
+            padding-bottom: 0px;
+
+        }
+
+
+        ul li {
+            display: inline-block;
+            padding: 10px;
+
+        }
+
+        ul a {
+            font-size: 24px;
+
+            padding: 2px 15px;
+            text-decoration: none;
+        }
+
+        .left {
+            position: fixed;
+            right: 0px;
+            top: 0%;
+            display: inline-block;
+        }
+
+        .left p {
+
+            height: 0px;
+            margin-top: 0%;
+            text-align: center;
+        }
+        .mid a{
+            color: rgb(87, 24, 129)
+        }
+
+        .mid {
+            display: inline-block;
+            width: 600px;
+            
+        }
+
+        .mid ul a:hover,
+        .mid a.active {
+            color: rgb(34, 40, 57);
+        }
+
+
+
+        .p h1 {
+            position: absolute;
+            left: 520px;
+             
+            align-items: center;
+        }
+
+        
+        .main {
+            position: absolute;
+            top: 100px;
+        }
+
+        .formin {
+
+            display: inline-block;
+            position: relative;
+            top: 140px;
+
+        }
+
+        .gender:hover {
+            border: 3px solid rgb(57, 63, 65);
+            color: rgb(3, 2, 71);
+            
+        }
+
+        .gender {
+            border: 2px solid rgb(26, 101, 80);
+            /* background-color: rgb(75, 201, 165); */
+            background: url(https://as2.ftcdn.net/v2/jpg/04/73/93/95/1000_F_473939570_66s9VCYDuR4oPONFq8wMogdrvG6SHBfQ.jpg);
+            display: inline-block;
+            position: relative;
+            left: 100px;
+            padding: 20px 200px;
+            border-radius: 60px;
+            /* This how we can slow down appearence of any tag.
+            transition: border 2s ease-out 100ms; */
+        }
+
+        .married:hover {
+            border: 3px solid rgb(57, 63, 65);
+            color: rgb(3, 2, 71);
+        }
+
+        .married {
+            border: 2px solid rgb(26, 101, 80);
+            background: url(https://as2.ftcdn.net/v2/jpg/04/73/93/95/1000_F_473939570_66s9VCYDuR4oPONFq8wMogdrvG6SHBfQ.jpg);
+            display: inline-block;
+            position: relative;
+            left: 100px;
+            padding: 20px 200px;
+            border-radius: 60px;
+        }
+
+        .dependents:hover {
+            border: 3px solid rgb(57, 63, 65);
+            color: rgb(3, 2, 71);
+        }
+
+        .dependents {
+            display: inline-block;
+            position: relative;
+            left: 100px;
+            padding: 20px 200px;
+            border: 2px solid rgb(26, 101, 80);
+            background: url(https://as2.ftcdn.net/v2/jpg/04/73/93/95/1000_F_473939570_66s9VCYDuR4oPONFq8wMogdrvG6SHBfQ.jpg);
+            border-radius: 60px;
+        }
+
+        .education:hover {
+            border: 3px solid rgb(57, 63, 65);
+            color: rgb(3, 2, 71);
+        }
+
+        .education {
+            border: 2px solid rgb(26, 101, 80);
+            background: url(https://as2.ftcdn.net/v2/jpg/04/73/93/95/1000_F_473939570_66s9VCYDuR4oPONFq8wMogdrvG6SHBfQ.jpg);
+            display: inline-block;
+            position: relative;
+            left: 100px;
+            padding: 20px 200px;
+            border-radius: 60px;
+        }
+
+        .selfemployed:hover {
+            border: 3px solid rgb(57, 63, 65);
+            color: rgb(3, 2, 71);
+        }
+
+        .selfemployed {
+            border: 2px solid rgb(26, 101, 80);
+            background: url(https://as2.ftcdn.net/v2/jpg/04/73/93/95/1000_F_473939570_66s9VCYDuR4oPONFq8wMogdrvG6SHBfQ.jpg);
+            display: inline-block;
+            position: relative;
+            left: 100px;
+            padding: 20px 200px;
+            border-radius: 60px;
+        }
+
+        .applicantincome:hover {
+            border: 3px solid rgb(57, 63, 65);
+            color: rgb(3, 2, 71);
+        }
+
+        .applicantincome {
+            border: 2px solid rgb(26, 101, 80);
+            background: url(https://as2.ftcdn.net/v2/jpg/04/73/93/95/1000_F_473939570_66s9VCYDuR4oPONFq8wMogdrvG6SHBfQ.jpg);
+            display: inline-block;
+            position: relative;
+            left: 100px;
+            padding: 20px 200px;
+            border-radius: 60px;
+        }
+
+        .coapplicantincome:hover {
+            border: 3px solid rgb(57, 63, 65);
+            color: rgb(3, 2, 71);
+        }
+
+        .coapplicantincome {
+            border: 2px solid rgb(26, 101, 80);
+            background: url(https://as2.ftcdn.net/v2/jpg/04/73/93/95/1000_F_473939570_66s9VCYDuR4oPONFq8wMogdrvG6SHBfQ.jpg);
+            display: inline-block;
+            position: relative;
+            left: 100px;
+            padding: 20px 200px;
+            border-radius: 60px;
+        }
+
+        .loanamount:hover {
+            border: 3px solid rgb(57, 63, 65);
+            color: rgb(3, 2, 71);
+        }
+
+        .loanamount {
+            border: 2px solid rgb(26, 101, 80);
+            background: url(https://as2.ftcdn.net/v2/jpg/04/73/93/95/1000_F_473939570_66s9VCYDuR4oPONFq8wMogdrvG6SHBfQ.jpg);
+
+            display: inline-block;
+            position: relative;
+            left: 100px;
+            padding: 20px 200px;
+            border-radius: 60px;
+        }
+
+        .loanamountterm:hover {
+            border: 3px solid rgb(57, 63, 65);
+            color: rgb(3, 2, 71);
+        }
+
+        .loanamountterm {
+            border: 2px solid rgb(26, 101, 80);
+            background: url(https://as2.ftcdn.net/v2/jpg/04/73/93/95/1000_F_473939570_66s9VCYDuR4oPONFq8wMogdrvG6SHBfQ.jpg);
+            display: inline-block;
+            position: relative;
+            left: 100px;
+            padding: 20px 200px;
+            border-radius: 60px;
+        }
+
+        .credithistory:hover {
+            border: 3px solid rgb(57, 63, 65);
+            color: rgb(3, 2, 71);
+        }
+
+        .credithistory {
+            border: 2px solid rgb(26, 101, 80);
+            background: url(https://as2.ftcdn.net/v2/jpg/04/73/93/95/1000_F_473939570_66s9VCYDuR4oPONFq8wMogdrvG6SHBfQ.jpg);
+            display: inline-block;
+            position: relative;
+            left: 100px;
+            padding: 20px 200px;
+            border-radius: 60px;
+        }
+
+        .propertyarea:hover {
+            border: 3px solid rgb(57, 63, 65);
+            color: rgb(3, 2, 71);
+        }
+
+        .propertyarea {
+            border: 2px solid rgb(26, 101, 80);
+            background: url(https://as2.ftcdn.net/v2/jpg/04/73/93/95/1000_F_473939570_66s9VCYDuR4oPONFq8wMogdrvG6SHBfQ.jpg);
+            display: inline-block;
+            position: relative;
+            left: 380px;
+            padding: 20px 200px;
+            border-radius: 60px;
+        }
+
+        .submit input:hover {
+            border: 3px solid rgb(57, 63, 65);
+            color: rgb(3, 2, 71);
+        }
+
+        .submit {
+            margin: auto;
+            width: 400px;
+            padding: 20px;
+            margin-left: 450px;
+        }
+
+        .submit input {
+            font-size: 20px;
+            margin: auto;
+            display: block;
+            border: 2px solid rgb(26, 101, 80);
+            background: url(https://as2.ftcdn.net/v2/jpg/04/73/93/95/1000_F_473939570_66s9VCYDuR4oPONFq8wMogdrvG6SHBfQ.jpg);
+            padding: 20px;
+            padding-left: 50px;
+            padding-right: 50px;
+            border-radius: 20px;
+            align-items: center;
+        }
+
+        .btn {
+            font-size: 20px;
+            position: absolute;
+            left: 20px;
+            top: 15px;
+             
+             
+            background-color: rgb(177, 181, 179);
+            border: none;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+         
+        .formin input {
+            border-radius: 20px;
+            padding: 5px 23px;
+        }
+
+        .formin #id {
+            border-radius: 20px;
+        }
+
+        .formin label {
+            width: 60%;
+            margin: auto;
+            align-items: center;
+            display: block;
+        }
+        select {
+            position: absolute;
+            left: 33%;
+        }
+        header .note p {
+            display: inline-block;
+            font-size: larger;
+            position: relative;
+            top: 75px;
+            left: 300px;
+        }
+        .modelpred{
+            display: inline-block;
+            position: absolute;
+            top: 220px;
+            left: 510px;
+            font-size: 20px;
+            color: rgba(62, 66, 3, 0.815);
+            
+        }
+         
+
+    </style>
+</head>
+
+<body>
+    <header class="top">
+        <div class="left">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLl4CyVxeROmcJ_gGQeGu-w2q_OgS0Jy7n6N0uggywgB3ng4t6cvwsssr68qsBFpgi5gE&usqp=CAU"
+                alt=""><br>
+            <p>Predictiion Center</p>
+        </div>
+        <div class="mid">
+            <ul>
+                <li><a href="{{ url_for('pro') }}">Home</a></li>
+                <li><a href="{{ url_for( 'About' )}}">About</a></li>
+                <li><a href="{{ url_for( 'MachineLearn' )}}">Machine Learning</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="modelpred">
+       <h3> 
+        {{ predictmyvalue  }}  
+    </h3>
+    </div>
+
+
+    </div>
+
+    <div class="active">
+        <button class="btn" href="{{ url_for('myform') }}">Prediction</button>
+    </div>
+
+    <div class="main">
+        <header class="p">
+            <h1>Personal Loan Predictor</h1>
+            <div class="note">
+                <p class="notep">
+                    Note :
+                </p class="notepart">
+                <p>
+                    Completing the form in its entirety is a requirement in order to obtain accurate predictions.
+                </p>
+            </div>
+        </header>
+        <form  method="post" action="/Predict">
+            <div class="formin">
+                <div class="gender" data-aos="fade-right" data-aos-duration="3000">
+                    <label>Gender</label> <br>
+                    <input type="text" name="Gender"> <br><br>
+
+                    <select id='Gender'>
+                        <option class="opt" value="none">Your Choise Must be from these</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select> <br><br>
+                </div>
+                <div class="married" data-aos="fade-left" data-aos-duration="3000">
+                    <label>Married</label><br>
+                    <input type="text" name="Married"><br><br>
+                    <select id='Married'>
+                        <option class="opt" value="none">Your Choise Must be from these</option>
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select><br><br>
+                </div>
+                <div class="selfemployed" data-aos="fade-right" data-aos-duration="3000">
+                    <label>Self_Employed</label><br>
+                    <input type="text" name="Self_Employed"><br><br>
+                    <select id='Self_Employed'>
+                        <option class="opt" value="none">Your Choise Must be from these</option>
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select><br><br>
+                </div>
+
+                <div class="education" data-aos="fade-left" data-aos-duration="3000">
+                    <label>Education</label><br>
+                    <input type="text" name="Education"><br><br>
+                    <select id='Education'>
+                        <option class="opt" value="none">Your Choise Must be from these</option>
+                        <option value="Graduate">Graduate</option>
+                        <option value="Not Graduate">Not Graduate</option>
+                    </select><br><br>
+                </div>
+                <div class="dependents" data-aos="fade-right" data-aos-duration="2000">
+                    <label>Dependents</label><br>
+                    <input type="number" name="Dependents"><br><br>
+                </div>
+
+                <div class="applicantincome" data-aos="fade-left" data-aos-duration="2000">
+                    <label>ApplicantIncome</label><br>
+                    <input type="number" name="ApplicantIncome"><br><br>
+                </div>
+                <div class="coapplicantincome" data-aos="fade-right" data-aos-duration="2000">
+                    <label>CoapplicantIncome</label><br>
+                    <input type="number" name="CoapplicantIncome"><br><br>
+                </div>
+                <div class="loanamount" data-aos="fade-left" data-aos-duration="2000">
+                    <label>LoanAmount</label><br>
+                    <input type="number" name="LoanAmount"><br><br>
+                </div>
+                <div class="loanamountterm" data-aos="fade-right" data-aos-duration="2000">
+                    <label>Loan_Amount_Term</label><br>
+                    <input type="number" name="Loan_Amount_Term"><br><br>
+                    <select id='Loan_Amount_Term'>
+                        <option class="opt" value="none">Your Choise Must be from these</option>
+                        <option value=360>360</option>
+                        <option value=180>180</option>
+                            <option value=480>480</option>
+                            <option value=300>300</option>
+                            <option value=240>240</option>
+                            <option value= 84>84</option>
+                            <option value=120>120</option>
+                            <option value=60>60</option>
+                            <option value=36>36</option>
+                            <option value=12>12</option>
+                            <option value="none">Or fill other loan term</option>
+                    </select><br><br>
+                </div>
+                <div class="credithistory" data-aos="fade-left" data-aos-duration="2000">
+                    <label>Credit_History</label><br>
+                    <input type="number" name="Credit_History"><br><br>
+                    <select id='Credit_History'>
+                        <option class="opt" value="none">Your Choise Must be from these</option>
+                        <option value=1>1:It mean Yes</option>
+                        <option value=0>0:It mean No</option>
+                    </select><br><br>
+                </div>
+                <div class="propertyarea" data-aos="flip-up" data-aos-duration="2000">
+                    <label>Property_Area</label><br>
+                    <input type="text" name="Property_Area"><br><br>
+                    <select id='Property_Area'>
+                        <option class="opt" value="none">Your Choise Must be from these</option>
+                        <option value="Semiurban">Semiurban</option>
+                        <option value="Urban">Urban</option>
+                        <option value="Rural">Rural</option>
+                    </select><br><br>
+                </div>
+                <div class="submit"  >
+                    <input type="submit" value="Predict"><br><br>
+                </div>
+                
+            </div>
+        </form>
+
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+
+</html>

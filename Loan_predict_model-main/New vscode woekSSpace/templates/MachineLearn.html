@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>Machine Learning</title>
+  <style>
+    * {
+      font-family: 'Signika', sans-serif;
+    }
+
+    body {
+      /* height: 1100px; */
+      margin: 0%;
+      padding: 0%;
+      background: url(https://crossbones.org.uk/wp-content/uploads/2016/08/grey-background.jpg);
+      /* background: url(https://data.freehdw.com/blue-and-green-triangles.jpg); */
+
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .top {
+      /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+      margin: auto;
+      width: 550px;
+      padding: 2px;
+      border-radius: 40px;
+      font-size: large;
+    }
+
+    .left img {
+
+
+      height: 50px;
+      padding-top: 10px;
+      padding-left: 45px;
+      padding-bottom: 0px;
+
+    }
+
+
+    .midlist .nvb {
+      display: inline-block;
+      padding: 10px;
+
+    }
+
+    .mid .midlist a {
+      font-size: 24px;
+
+      padding: 2px 15px;
+      text-decoration: none;
+    }
+
+    .left {
+      position: fixed;
+      right: 0px;
+      top: 0%;
+      display: inline-block;
+    }
+
+    .left p {
+
+      height: 0px;
+      margin-top: 0%;
+      text-align: center;
+    }
+
+    .mid a {
+      color: rgb(97, 53, 126)
+    }
+
+    .mid {
+      display: inline-block;
+      width: 600px;
+    }
+
+    .mid .midlist a:hover,
+    .mid a.active {
+      color: rgb(34, 40, 57);
+    }
+
+    .btn {
+      text-decoration: none;
+      font-size: 20px;
+      position: absolute;
+      left: 20px;
+      top: 15px;
+      background-color: rgb(199, 204, 204);
+      border: none;
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    /* .btn a{
+            text-decoration: none;
+            color: aqua;
+        } */
+
+    .btn:hover {
+      color: rgb(113, 114, 148);
+      background-color: rgb(177, 181, 179);
+
+    }
+
+    .mlbox {
+      /* border: 2px solid red; */
+      border-radius: 20px;
+      display: inline-block;
+      margin: auto;
+      width: 900px;
+      position: relative;
+      left: 376px;
+      top: 200px;
+      padding: 40px 50px 90px;
+    }
+
+    .mlbox-left {
+      /* border: 2px solid red; */
+      border-radius: 20px;
+      display: inline-block;
+      margin: auto;
+      width: 270px;
+      position: absolute;
+      left: 0px;
+      top: 293px;
+      padding: 40px 50px 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top">
+    <div class="left">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLl4CyVxeROmcJ_gGQeGu-w2q_OgS0Jy7n6N0uggywgB3ng4t6cvwsssr68qsBFpgi5gE&usqp=CAU"
+        alt=""><br>
+      <p>Predictiion Center</p>
+    </div>
+
+    <div class="mid">
+      <ul class="midlist">
+        <li class="nvb"><a href="{{ url_for('pro') }}">Home</a></li>
+        <li class="nvb"><a href="{{ url_for( 'About' )}}">About</a></li>
+        <li class="nvb"><a class="active" href="{{ url_for( 'MachineLearn' )}}">Machine Learning</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="mlbox-left" data-aos="fade-up-right" data-aos-duration="3000">
+    <h3>Confusion Matrix</h3>
+    <p>
+      A confusion matrix is a commonly used tool in machine learning and statistics to evaluate the performance of a
+      classification algorithm. It is especially useful when working with binary or multiclass classification problems.
+      The confusion matrix is a table that helps us understand how well a model's predictions align with the actual
+      class labels in a dataset.
+    </p>
+    <img height="80px" data-aos="fade-up"
+      src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*2lptVD05HarbzGKiZ44l5A.png" alt="">
+    <p>
+      Let’s understand TP, FP, FN, TN in terms of pregnancy analogy.
+    </p>
+    <img height="190px" data-aos="fade-up"
+      src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*7EYylA6XlXSGBCF77j_rOA.png" alt="">
+    <h4>
+      True Positive:
+    </h4>
+    <p> Interpretation: You predicted positive and it’s true.
+    </p>
+    <p>
+      You predicted that a woman is pregnant and she actually is.
+    </p>
+    <h4>
+      True Negative:
+    </h4>
+    <p>
+      Interpretation: You predicted negative and it’s true.
+    </p>
+    <p>
+      You predicted that a man is not pregnant and he actually is not.
+    </p>
+    <h4>
+      False Positive: (Type 1 Error)
+    </h4>
+    <p>
+      Interpretation: You predicted positive and it’s false.
+    </p>
+    <p>
+      You predicted that a man is pregnant but he actually is not.
+    </p>
+    <h4>
+      False Negative: (Type 2 Error)
+    </h4>
+    <p>
+      Interpretation: You predicted negative and it’s false.
+    </p>
+    <p>
+      You predicted that a woman is not pregnant but she actually is.
+    </p>
+    <p>
+      Just Remember, We describe predicted values as Positive and Negative and actual values as True and False.
+    </p>
+    <p>
+      From the confusion matrix, several performance metrics can be calculated to evaluate a classifier, including:
+    </p>
+    <ul>
+      <li>
+       <h5> Accuracy:</h5> The proportion of correct predictions, calculated as (TP + TN) / (TP + TN + FP + FN).
+      </li>
+      <li>
+        <h5> Precision:</h5> The ability of the model to correctly identify positive cases, calculated as TP / (TP + FP).
+      </li>
+      <li>
+       <h5> Recall (Sensitivity or True Positive Rate): </h5> The proportion of actual positive cases correctly predicted by the
+        model, calculated as TP / (TP + FN).
+      </li>
+      <li>
+       <h5> Specificity (True Negative Rate): </h5> The proportion of actual negative cases correctly predicted by the model,
+        calculated as TN / (TN + FP).
+      </li>
+      <li>
+       <h5> F1-Score: </h5> The harmonic mean of precision and recall, which balances both metrics and is calculated as 2 *
+        (Precision * Recall) / (Precision + Recall).
+      </li>
+      <li>
+       <h5> False Positive Rate (FPR): </h5> The proportion of actual negative cases that were incorrectly predicted as positive,
+        calculated as FP / (FP + TN).
+      </li>
+      <li>
+       <h5> True Negative Rate (TNR): </h5> Another name for specificity.
+      </li>
+      <li>
+       <h5> False Negative Rate (FNR): </h5> The proportion of actual positive cases that were incorrectly predicted as negative,
+        calculated as FN / (FN + TP).
+      </li>
+    </ul>
+    <p>
+      A confusion matrix is a valuable tool for understanding how well a model is performing, especially in cases where different types of errors (false positives and false negatives) have different consequences or costs. It allows you to see where the model is making mistakes and can help you fine-tune the model or make decisions about its deployment based on the specific goals and constraints of your application.
+    </p>
+  </div>
+  <div class="mlbox" data-aos="fade-up" data-aos-duration="3000">
+    <div class="intro" data-aos="fade-up">
+      <h2>
+        What is Machine Learning?
+      </h2>
+      <p data-aos="fade-up">
+        Machine Learning is the field of study that gives computers the capability to learn without being explicitly
+        programmed. ML is one of the most exciting technologies that one would have ever come across. As it is evident
+        from the name, it gives the computer that makes it more similar to humans: The ability to learn. Machine
+        learning is actively being used today, perhaps in many more places than one would expect.
+      </p>
+    </div>
+    <div class="feature" data-aos="fade-up">
+      <h2>
+        Features of Machine learning
+      </h2>
+      <ul class="feul" data-aos="fade-up">
+        <li class="fel" data-aos="fade-up">
+          Machine learning is data driven technology. Large amount of data generated by organizations on daily bases.
+          So, by notable relationships in data, organizations makes better decisions.
+        </li>
+        <li class="fel" data-aos="fade-up">
+          Machine can learn itself from past data and automatically improve.
+        </li>
+        <li class="fel" data-aos="fade-up">
+          From the given dataset it detects various patterns on data.
+        </li>
+        <li class="fel" data-aos="fade-up">
+          For the big organizations branding is important and it will become more easy to target relatable customer
+          base.
+        </li>
+        <li class="fel" data-aos="fade-up">
+          It is similar to data mining because it is also deals with the huge amount of data.
+        </li>
+      </ul>
+    </div>
+    <div class="mltypes" data-aos="fade-up">
+      <h2>
+        What are the different types of machine learning?
+      </h2>
+      <p class="mltp" data-aos="fade-up">
+        Classical machine learning is often categorized by how an algorithm learns to become more accurate in its
+        predictions. There are four basic approaches:supervised learning, unsupervised learning, semi-supervised
+        learning and reinforcement learning. The type of algorithm data scientists choose to use depends on what type of
+        data they want to predict.
+      </p>
+
+      <ul class="sulearnul" data-aos="fade-up">
+        <li class="sulearnl" data-aos="fade-up">
+          <h3>Supervised learning:</h3>
+          <p data-aos="fade-up">In this type of machine learning, data scientists supply algorithms with labeled
+            training data and define
+            the variables they want the algorithm to assess for correlations. Both the input and the output of the
+            algorithm is specified
+          </p>
+        </li>
+
+        <li class="sulearnul" data-aos="fade-up">
+          <h4>How Supervised Learning Works?</h4>
+          <p data-aos="fade-up">
+            In supervised learning, models are trained using labelled dataset, where the model learns about each type of
+            data. Once the training process is completed, the model is tested on the basis of test data (a subset of the
+            training set), and then it predicts the output.
+
+            The working of Supervised learning can be easily understood by the below example and diagram:
+          </p>
+          <img data-aos="fade-up"
+            src="https://static.javatpoint.com/tutorial/machine-learning/images/supervised-machine-learning.png" alt="">
+        </li>
+        <li class="sulearnul" data-aos="fade-up">
+          <h4>Steps Involved in Supervised Learning:</h4>
+          <ul class="step-sulearn-ul" data-aos="fade-up">
+            <li class="step-sulearn-l" data-aos="fade-up">
+              First Determine the type of training dataset
+              Collect/Gather the labelled training data.
+            </li>
+            <li class="step-sulearn-l" data-aos="fade-up">
+              Split the training dataset into training dataset, test dataset, and validation dataset.
+            </li>
+            <li class="step-sulearn-l" data-aos="fade-up">
+              Determine the input features of the training dataset, which should have enough knowledge so that the model
+              can accurately predict the output.
+            </li>
+            <li class="step-sulearn-l" data-aos="fade-up">
+              Determine the suitable algorithm for the model, such as support vector machine, decision tree, etc.
+            </li>
+            <li class="step-sulearn-l" data-aos="fade-up">
+              Execute the algorithm on the training dataset.
+            </li>
+            <li class="step-sulearn-l" data-aos="fade-up">
+              Sometimes we need validation sets as the control
+              parameters, which are the subset of training datasets.
+            </li>
+            <li class="step-sulearn-l" data-aos="fade-up">
+              Evaluate the accuracy of the model by providing the test set. If the model predicts the correct output,
+              which means our model is accurate.
+            </li>
+
+          </ul>
+        </li>
+        <li class="ty-sulearn" data-aos="fade-up">
+          <h4>Types of supervised Machine learning Algorithms:</h4>
+          <p class="ty-sulearn-p" data-aos="fade-up">
+            Supervised learning can be further divided into two types of problems:
+          </p>
+          <img class="ty-sulearn-img" data-aos="fade-up"
+            src="https://media.geeksforgeeks.org/wp-content/uploads/SL-type.png" alt="">
+          <ol class="ty-sulearn-ol" data-aos="fade-up">
+            <li class="ty-sulearn-l" data-aos="fade-up">
+              <h5>Regression</h5>
+              <p class="ty-sulearn-lp" data-aos="fade-up">
+                Regression algorithms are used if there is a relationship between the input variable and the output
+                variable. It is used for the prediction of continuous variables, such as Weather forecasting, Market
+                Trends, etc. Below are some popular Regression algorithms which come under supervised learning:
+              <ul class="ty-sulearn-l-ul" data-aos="fade-up">
+                <li class="ty-sulearn-l-ul-l" data-aos="fade-up">Linear Regression</li>
+                <li class="ty-sulearn-l-ul-l" data-aos="fade-up">Regression Trees</li>
+                <li class="ty-sulearn-l-ul-l" data-aos="fade-up">Non-Linear Regression</li>
+                <li class="ty-sulearn-l-ul-l" data-aos="fade-up">Bayesian Linear Regression</li>
+                <li class="ty-sulearn-l-ul-l" data-aos="fade-up">Polynomial Regression</li>
+              </ul>
+              </p>
+            </li>
+            <li class="ty-sulearn-l" data-aos="fade-up">
+              <h5>Classification</h5>
+              <p class="ty-sulearn-lp" data-aos="fade-up">
+                Classification algorithms are used when the output variable is categorical, which means there are two
+                classes such as Yes-No, Male-Female, True-false, etc.
+              </p>
+              <ul class="ty-sulearn-l-ul" data-aos="fade-up">
+                <li class="ty-sulearn-l-ul-l" data-aos="fade-up">
+                  Random Forest
+                </li>
+                <li class="ty-sulearn-l-ul-l" data-aos="fade-up">
+                  Decision Trees
+                </li>
+                <li class="ty-sulearn-l-ul-l" data-aos="fade-up">
+                  Logistic Regression
+                </li>
+                <li class="ty-sulearn-l-ul-l" data-aos="fade-up">
+                  Support vector Machines
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+        <li data-aos="fade-up">
+          <h3>Unsupervised Machine Learning</h3>
+          <p data-aos="fade-up">
+            In the previous topic, we learned supervised machine learning in which models are trained using labeled data
+            under the supervision of training data. But there may be many cases in which we do not have labeled data and
+            need to find the hidden patterns from the given dataset. So, to solve such types of cases in machine
+            learning, we need unsupervised learning techniques.
+          </p>
+        </li>
+        <li data-aos="fade-up">
+          <h4>Why use Unsupervised Learning?</h4>
+          <p data-aos="fade-up">Below are some main reasons which describe the importance of Unsupervised Learning:
+          </p>
+          <ul data-aos="fade-up">
+            <li data-aos="fade-up">
+              Unsupervised learning is helpful for finding useful insights from the data.
+            </li>
+            <li data-aos="fade-up">
+
+              Unsupervised learning is much similar as a human learns to think by their own experiences, which makes it
+              closer to the real AI.
+            </li>
+            <li data-aos="fade-up">
+
+              Unsupervised learning works on unlabeled and uncategorized data which make unsupervised learning more
+              important.
+            </li>
+            <li data-aos="fade-up">
+
+              In real-world, we do not always have input data with the corresponding output so to solve such cases, we
+              need unsupervised learning.
+            </li>
+          </ul>
+        </li>
+        <li data-aos="fade-up">
+          <h4>Working of Unsupervised Learning</h4>
+          <p data-aos="fade-up">Working of unsupervised learning can be understood by the below diagram:</p>
+
+          <img data-aos="fade-up"
+            src="https://static.javatpoint.com/tutorial/machine-learning/images/unsupervised-machine-learning-1.png"
+            alt="">
+
+          <p data-aos="fade-up">Here, we have taken an unlabeled input data, which means it is not categorized and
+            corresponding outputs
+            are also not given. Now, this unlabeled input data is fed to the machine learning model in order to train
+            it. Firstly, it will interpret the raw data to find the hidden patterns from the data and then will apply
+            suitable algorithms such as k-means clustering, Decision tree, etc.
+          </p>
+          <p data-aos="fade-up">
+            Once it applies the suitable algorithm, the algorithm divides the data objects into groups according to the
+            similarities and difference between the objects.
+          </p>
+        </li>
+        <li data-aos="fade-up">
+          <h4>Types of Unsupervised Learning Algorithm:</h4>
+          <img data-aos="fade-up"
+            src="https://static.javatpoint.com/tutorial/machine-learning/images/unsupervised-machine-learning-2.png"
+            alt="">
+
+          <ol data-aos="fade-up">
+            <li data-aos="fade-up">
+              <h5>Clustering:</h5>
+              <p data-aos="fade-up">Clustering is a method of grouping the objects into clusters such that objects with
+                most similarities
+                remains into a group and has less or no similarities with the objects of another group. Cluster analysis
+                finds the commonalities between the data objects and categorizes them as per the presence and absence of
+                those commonalities.
+              </p>
+            </li>
+            <li data-aos="fade-up">
+              <h5>Association:</h5>
+              <p data-aos="fade-up">An association rule is an unsupervised learning method which is used for finding the
+                relationships
+                between variables in the large database. It determines the set of items that occurs together in the
+                dataset. Association rule makes marketing strategy more effective. Such as people who buy X item
+                (suppose a bread) are also tend to purchase Y (Butter/Jam) item. A typical example of Association rule
+                is Market Basket Analysis.
+              </p>
+            </li>
+          </ol>
+        </li>
+        <li data-aos="fade-up">
+          <h4>Unsupervised Learning algorithms:</h4>
+          <ul data-aos="fade-up">
+            <li data-aos="fade-up">
+              K-means clustering
+            </li>
+            <li data-aos="fade-up">
+              KNN (k-nearest neighbors)
+            </li>
+            <li data-aos="fade-up">
+              Hierarchal clustering
+            </li>
+            <li data-aos="fade-up">
+              Anomaly detection
+            </li>
+            <li data-aos="fade-up">
+              Neural Networks
+            </li>
+            <li data-aos="fade-up">
+              Principle Component Analysis
+            </li>
+            <li data-aos="fade-up">
+              Independent Component Analysis
+            </li>
+            <li data-aos="fade-up">
+              Apriori algorithm
+            </li>
+            <li data-aos="fade-up">
+              Singular value decomposition
+
+
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <a class="btn" style="color: rgb(35, 32, 32);" href=" {{ url_for('myform') }} ">Prediction</a>
+  </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
